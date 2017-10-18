@@ -1,0 +1,30 @@
+html, body {
+  background-color: white;
+  color: black;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.question {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 40%;
+}
+.question__input--label {
+    order: 1;
+    padding: 1%;
+}
+.question__input--input {
+    flex-grow: 1;
+}
+.question__select--label {
+    order: 2;
+    padding: 1%;
+}
+.question_buttongroup {
+    padding: 2%;
+    order: 3;
+    text-align: right;
+}
+.question__button {}

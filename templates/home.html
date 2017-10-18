@@ -1,0 +1,34 @@
+<script type="text/ng-template"  id="item.html">
+    {{data.name}}
+    <div class="question">
+    <label class="question__input--label" ng-show="data.nodes.length > 0 && data.nodes.isArray">Condition
+        <select class="question__select--select">
+            <option value="equals">Equals</option>
+            <option value="greater">Greater than</option>
+            <option value="less">Less than</option>
+        </select>
+        <input class="question__input--input" type="text"></input>
+    </label>
+    <label class="question__input--label">Question
+        <input class="question__input--input" type="text"></input>
+    </label>
+    <label class="question__select--label">Type
+        <select class="question__select--select">
+            <option value="Text">Text</option>
+            <option value="Number">Number</option>
+            <option value="Radio">Yes/No</option>
+        </select>
+    </label>
+    <div class="question_buttongroup">
+        <button ng-click="add(data)" class="question__button question__button--subinput" type="button">Add Sub-Input</button>
+        <button ng-click="delete(data)" ng-show="data.nodes.length > 0" class="question__button question__button--delete" type="button">Delete</button>
+    </div>
+</div>
+    <ul>
+        <li ng-repeat="data in data.nodes" ng-include="'item.html'"></li>
+    </ul>
+</script>
+
+<ul>
+    <li ng-repeat="data in tree" ng-include="'item.html'"></li>
+</ul>
